@@ -16,7 +16,6 @@ class Solution:
             node = Q.popleft()
             if node.left: temp.append(node.left)
             if node.right: temp.append(node.right)
-            
             if not Q:
                 if temp:
                     levels.append([n.val for n in temp])
