@@ -7,6 +7,7 @@
 class Solution:
     def isValidBST(self, root: Optional[TreeNode]) -> bool:
         def valid(node, minimum, maximum):
+            
             if not node:
                 return True
             
