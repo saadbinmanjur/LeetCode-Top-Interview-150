@@ -11,6 +11,7 @@ class Solution:
             if course in taken:
                 return False
             taken.add(course)
+            
             for p in pre[course]:
                 if not dfs(p): return False
             pre[course] = []
