@@ -1,6 +1,5 @@
 class Solution:
     def canFinish(self, numCourses: int, prerequisites: List[List[int]]) -> bool:
-        
         pre = defaultdict(list)
 
         for course, p in prerequisites:
