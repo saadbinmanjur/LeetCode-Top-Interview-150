@@ -17,6 +17,7 @@ class Solution:
         visited[1] = 1
         curr = [1]
         steps = 0
+        
         while curr:
             steps += 1
             new = set()
