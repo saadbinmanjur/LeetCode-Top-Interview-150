@@ -13,7 +13,6 @@ class Solution:
                         num = n - k
                     num += (n - 1 - j) * n
                     ladder[num] = board[j][k]
-
         visited = [0 for j in range(target + 1)]
         visited[1] = 1
         curr = [1]
