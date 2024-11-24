@@ -34,5 +34,4 @@ class Solution:
                         new.add(k)
                         visited[k] = 1
             curr = new
-
         return -1
