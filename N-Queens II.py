@@ -15,7 +15,6 @@ class Solution:
                 col.remove(c)
                 pos.remove(c+r)
                 neg.remove(r-c)
-                
         backtracking(0)
 
         return res
