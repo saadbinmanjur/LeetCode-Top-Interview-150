@@ -1,5 +1,6 @@
 class Solution:
     def totalNQueens(self, n: int) -> int:
+        
         res,col,pos,neg=0,set(),set(),set()
         def backtracking(r):
             if n==r:
