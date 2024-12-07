@@ -14,6 +14,7 @@ class Solution:
             visited.add((r,c))
             res = dfs(r+1, c, k+1) or dfs(r-1, c, k+1) or dfs(r, c+1, k+1) or dfs(r, c-1, k+1)
             visited.remove((r,c))
+            
             return res
         
         count = {}
