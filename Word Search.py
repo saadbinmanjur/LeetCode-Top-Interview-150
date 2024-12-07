@@ -19,8 +19,10 @@ class Solution:
         count = {}
         for c in word:
             count[c] = 1 + count.get(c, 0)
+        
         if count[word[0]] > count[word[-1]]:
             word = word[::-1]
+        
         for r in range(rows):
             for c in range(cols):
                 if dfs(r, c, 0):
