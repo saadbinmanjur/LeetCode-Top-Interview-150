@@ -26,4 +26,3 @@ class Solution:
         right = binary_search(nums, target, False)
         
         return [left, right]
-            
