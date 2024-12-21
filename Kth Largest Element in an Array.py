@@ -1,25 +1,24 @@
 class Solution:
     def findKthLargest(self, nums: List[int], k: int) -> int:
-        k = len(nums) - k
+        # Initialize an empty list
+        k_numbers_min_heap = []
 
-        for i in range(len(nums) - 1, -1, -1):
-            j = random.randint(0, i)
-            nums[i], nums[j] = nums[j], nums[i]
+        # Add first k elements to the list
+        for i in range(k):
+            k_numbers_min_heap.append(nums[i])
 
-        def quick_select(left, right):
-            pivot, p = nums[right], left
+        # Convert the list into a min-heap
+        heapq.heapify(k_numbers_min_heap)
 
-            for i in range(left, right):
-                if nums[i] <= pivot:
-                    nums[p], nums[i] = nums[i], nums[p]
-                    p += 1
-            nums[p], nums[right] = nums[right], nums[p]
+        # Loop through the remaining elements in the 'nums' array
+        for i in range(k, len(nums)):
+            # Compare the current element with the minimum
+            # element (root) of the min-heap
+            if nums[i] > k_numbers_min_heap[0]:
+                # Remove the smallest element
+                heapq.heappop(k_numbers_min_heap)
+                # Add the current element
+                heapq.heappush(k_numbers_min_heap, nums[i])
 
-            if p > k:
-                return quick_select(left, p - 1)
-            elif p < k:
-                return quick_select(p + 1, right)
-            else:
-                return nums[p]
-
-        return quick_select(0, len(nums) - 1)
+        # The root of the heap has the Kth largest element
+        return k_numbers_min_heap[0]
